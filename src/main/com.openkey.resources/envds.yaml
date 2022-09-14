@@ -1,0 +1,19 @@
+name: OpenKeyMobileApp
+environment: dev
+desired_capabilities:
+  -   device: Pixel 2XL
+      os_version: 11.0
+      appPackage: com.openkey
+      appActivity: com.openkey.MainActivity
+      orientation: PORTRAIT
+      type: Android
+  -   device: iPhone 11
+      type: iOS
+      os_version: 15.5
+      appPackage: com.openkey.guest
+      appActivity: com.openkey.guest.ui.activities.LauncherActivity
+      orientation: PORTRAIT
+credentials:
+  - id: appcenter
+    username: mrajgor-openkey
+    password: Openkey01

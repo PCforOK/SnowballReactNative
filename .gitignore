@@ -1,0 +1,5 @@
+target/
+src/main/resources/app/*.apk
+.idea/
+.idea
+.idea\

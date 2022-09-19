@@ -12,8 +12,8 @@ import org.testng.annotations.Test;
 
 @CucumberOptions(
     monochrome = true,
-    tags = "not @MoreMenuAndroidApp and not @ShareKeyFeature",
-    features = "src/main/com.openkey.resources/features",
+    //tags = "@DownloadMobileKey and @OpenKeyDoorLockReactNativeApp",
+        features = "src/main/com.openkey.resources/features",
     glue = "com.openkey.steps",
     publish = true
 )
@@ -46,9 +46,6 @@ public class TestRunner extends CapabilitiesManager {
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
 
-        //if (driver.removeApp(appPackage)) {
-          //  System.out.println("App is now uninstalled");
-        //}
         testNGCucumberRunner.finish();
 
     }

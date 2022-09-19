@@ -1,5 +1,4 @@
 package com.openkey.steps;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,45 +7,41 @@ import io.cucumber.java.en.When;
 
 public class AppLoginSteps extends BaseSteps {
 
-    @Before
+@Before
 
-    public void setups () {
+public void setups () {
 
         setupScreens(driver);
 
-    }
+        }
 
-    @Given("^App is installed in the device$")
+@Given("^App is installed in the device$")
 
-     public void Appisinstalledinthedevice () {
+public void appInstalledInTheDevice () {
 
-     }
+        }
 
-    @When("^App is launched$")
+@When("^App is launched$")
 
-    public void Appislaunched () {
+public void appLaunched () {
 
 
-    }
+        }
 
-    @And("^Splash screen should appear$")
+@And("^Splash screen should appear$")
 
-    public void Splashscreenshouldappear () {
+public void splashScreenShouldAppear () {
         appLoginScreenLogic.verifySplashScreen();
-    }
+        }
 
-    @Then("^User should be presented with Push Notifications screen$")
+@Then("^User should be presented with Push Notifications screen$")
 
-    public void UsershouldbepresentedwithPushNotificationsscreen() throws InterruptedException {
+public void userShouldBePresentedWithPushNotificationsScreen() throws InterruptedException {
 
         appLoginScreenLogic.verifyPushNotificationScreen();
         appLoginScreenLogic.verifyReservationScreen();
         appLoginScreenLogic.readOTP();
-        appLoginScreenLogic.verifyenterOTPScreen();
-    }
-
-
-
-
+        appLoginScreenLogic.verifyEnterOTPScreen();
+        }
 
 }

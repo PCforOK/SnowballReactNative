@@ -15,7 +15,6 @@
         <selenium-java-version>4.2.1</selenium-java-version>
         <testng-version>7.6.0</testng-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <aspectj.version>1.8.10</aspectj.version>
     </properties>
 
     <dependencies>
@@ -145,26 +144,17 @@
             <version>2.19.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.9</version>
-            <scope>runtime</scope>
-        </dependency>
-
-
     </dependencies>
 
     <build>
         <defaultGoal>install</defaultGoal>
         <pluginManagement>
             <plugins>
-                 <plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>2.3.2</version>
-                 </plugin>
+                </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -172,27 +162,12 @@
                     <version>3.0.0-M7</version>
                     <configuration>
                         <suiteXmlFiles>
-                             <suiteXmlFile>testng.xml</suiteXmlFile>
+                            <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
-                </plugin>
-
-
-                <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
-                <configuration>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                        -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
-                    </argLine>
-                </configuration>
-
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
 
-
-
+</project>

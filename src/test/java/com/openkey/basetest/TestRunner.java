@@ -12,8 +12,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
-        plugin = {"cucumberHooks.customReportListener",
-                "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"},
+        //plugin = {"cucumberHooks.customReportListener",
+                //"io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"},
         monochrome = true,
         //tags = "not @MoreMenuAndroidApp and not @ShareKeyFeature",
         features = "src/main/com.openkey.resources/features",

@@ -5,17 +5,13 @@ import com.openkey.setups.CapabilitiesManager;
 import io.appium.java_client.android.AndroidDriver;
 
 public class BaseSteps extends CapabilitiesManager {
-
-    protected AppLoginScreenLogic appLoginScreenLogic;
-    protected OpenKeyDownloadMobileKeyScreen openKeyDownloadMobileKeyScreen;
-    protected OpenKeyDoorLockScreen openDoorLockScreen;
-
+    protected RN_OpenKeyMobileAndroidAppLoginScreen openKeyMobileAndroidAppLoginScreen;
+    protected RN_OpenKeyMobileAndroidAppLaunchScreen openKeyMobileAndroidAppLaunchScreen;
 
     public void setupScreens(AndroidDriver driver) {
 
-        appLoginScreenLogic= new AppLoginScreenLogic(driver);
-        openKeyDownloadMobileKeyScreen = new OpenKeyDownloadMobileKeyScreen(driver);
-        openDoorLockScreen = new OpenKeyDoorLockScreen(driver);
+        openKeyMobileAndroidAppLaunchScreen = new RN_OpenKeyMobileAndroidAppLaunchScreen(driver);
+        openKeyMobileAndroidAppLoginScreen = new RN_OpenKeyMobileAndroidAppLoginScreen(driver);
 
 
     }

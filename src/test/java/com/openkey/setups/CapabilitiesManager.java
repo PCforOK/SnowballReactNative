@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeTest;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +17,7 @@ public class CapabilitiesManager {
      */
     //protected AppiumDriver driver;
     public static AndroidDriver driver;
-    public String appPackage ;
+    public String appPackage;
 
     /*// BrowserStack CapabilitiesManager
     public static String userName = "monalirajgor_jbYTIH";
@@ -37,7 +38,7 @@ public class CapabilitiesManager {
         YamlConfigReader.inititializeyaml();
 
         // Reading capabilities from yaml file using getDesired_capabilities() method in YamlConfigReader class
-        String [] desiredCapabilities= YamlConfigReader.getDesired_capabilities();
+        String[] desiredCapabilities = YamlConfigReader.getDesired_capabilities();
         String platformName = desiredCapabilities[0];
         String platformVersion = desiredCapabilities[1];
         String deviceName = desiredCapabilities[2];
@@ -45,23 +46,23 @@ public class CapabilitiesManager {
         String appActivity = desiredCapabilities[4];
         String orientation = desiredCapabilities[5];
 
-        String [] getCredentials= YamlConfigReader.getCredentials();
+        String[] getCredentials = YamlConfigReader.getCredentials();
         String appId = getCredentials[0];
         String userName = getCredentials[1];
         String password = getCredentials[2];
 
         System.out.println("App Center credentials :");
-        System.out.println("Id : " +appId);
-        System.out.println("user : " +userName);
-        System.out.println("Password : " +password);
+        System.out.println("Id : " + appId);
+        System.out.println("user : " + userName);
+        System.out.println("Password : " + password);
 
         System.out.println("Desired CapabilitiesManager");
-        System.out.println("Device Name : " +deviceName);
-        System.out.println("deviceType : " +platformName);
-        System.out.println("platformVersion : " +platformVersion);
-        System.out.println("appPackage : " +appPackage);
-        System.out.println("appActivity : " +appActivity);
-        System.out.println("orientation : " +orientation);
+        System.out.println("Device Name : " + deviceName);
+        System.out.println("deviceType : " + platformName);
+        System.out.println("platformVersion : " + platformVersion);
+        System.out.println("appPackage : " + appPackage);
+        System.out.println("appActivity : " + appActivity);
+        System.out.println("orientation : " + orientation);
 
         // Read the DesiredCapabilities from ok-envds.yaml for OpenKey V5 Live-Debug App capabilities only for local attached device with system
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
@@ -81,7 +82,7 @@ public class CapabilitiesManager {
         capabilities.setCapability(MobileCapabilityType.ORIENTATION, orientation);
 
         // Appium CapabilitiesManager
-        capabilities.setCapability("skipUnlock","true");
+        capabilities.setCapability("skipUnlock", "true");
         capabilities.setCapability("ignoreHiddenApiPolicyError", "true");
 
         // Start Appium Server - Using appium command in Terminal

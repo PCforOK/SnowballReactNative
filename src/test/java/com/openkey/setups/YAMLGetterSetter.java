@@ -15,6 +15,7 @@ public class YAMLGetterSetter {
 
         this.environment = environment;
     }
+
     private String environment;
 
     private List<YAMLGetterSetter> desired_capabilities;
@@ -115,7 +116,7 @@ public class YAMLGetterSetter {
     @Override
     public String toString() {
 
-        return "\nname : " +name + "\ntype: " + type + "\nos_version: " + os_version + "device: " + device + "\ndesired_capabilities: " + desired_capabilities + "\n";
+        return "\nname : " + name + "\ntype: " + type + "\nos_version: " + os_version + "device: " + device + "\ndesired_capabilities: " + desired_capabilities + "\n";
     }
 
     // Credentials Node in yaml

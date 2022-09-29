@@ -1,13 +1,20 @@
 package com.openkey.setups;
 
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeTest;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
+
+
+
 
 public class CapabilitiesManager {
 
@@ -17,7 +24,13 @@ public class CapabilitiesManager {
      */
     //protected AppiumDriver driver;
     public static AndroidDriver driver;
-    public String appPackage;
+    public static String appPackage;
+    public static String platformName;
+    public static String platformVersion;
+    public static String deviceName;
+    public static String appActivity;
+    public static String orientation;
+
 
     /*// BrowserStack CapabilitiesManager
     public static String userName = "monalirajgor_jbYTIH";
@@ -34,17 +47,18 @@ public class CapabilitiesManager {
     public void preparation() throws IOException {
 
         // Use empty DesiredCapabilities object
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         YamlConfigReader.inititializeyaml();
-
         // Reading capabilities from yaml file using getDesired_capabilities() method in YamlConfigReader class
-        String[] desiredCapabilities = YamlConfigReader.getDesired_capabilities();
-        String platformName = desiredCapabilities[0];
-        String platformVersion = desiredCapabilities[1];
-        String deviceName = desiredCapabilities[2];
+        String [] desiredCapabilities = YamlConfigReader.getDesired_capabilities();
+        platformName = desiredCapabilities[0];
+        platformVersion = desiredCapabilities[1];
+        deviceName = desiredCapabilities[2];
         appPackage = desiredCapabilities[3];
-        String appActivity = desiredCapabilities[4];
-        String orientation = desiredCapabilities[5];
+        appActivity = desiredCapabilities[4];
+        orientation = desiredCapabilities[5];
+
 
         String[] getCredentials = YamlConfigReader.getCredentials();
         String appId = getCredentials[0];
@@ -97,7 +111,27 @@ public class CapabilitiesManager {
         // Use a higher value if your mobile elements take time to show up
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
+
+
+
+
+
+       // pr.setProperty("Device Name :", deviceName);
+        //pr.setProperty("deviceType : ", platformName);
+        //pr.setProperty("platformVersion : ", platformVersion);
+        //pr.setProperty("appPackage : ", appPackage);
+       // pr.setProperty("appActivity : ", appActivity);
+       // pr.setProperty("orientation : ", orientation);
+       // pr.setProperty("Set lock counter value : ","15");
+
+        // pr.store(new FileOutputStream(path),"test ankit reports");
+
+
+
+
+
     }
+
 
 
 }

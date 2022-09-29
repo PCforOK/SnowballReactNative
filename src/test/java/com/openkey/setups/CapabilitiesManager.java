@@ -5,17 +5,9 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeTest;
-
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-
-
-
-
 public class CapabilitiesManager {
 
     /**
@@ -30,9 +22,8 @@ public class CapabilitiesManager {
     public static String deviceName;
     public static String appActivity;
     public static String orientation;
-
     public  String [] desiredCapabilities;
-    public static int lockCounter;
+    public static int lockCounter=0;
 
     /*// BrowserStack CapabilitiesManager
     public static String userName = "monalirajgor_jbYTIH";

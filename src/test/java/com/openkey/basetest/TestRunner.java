@@ -13,7 +13,7 @@ import java.io.IOException;
 @CucumberOptions(
         plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         monochrome = true,
-        tags = "@AppLaunchRNAndroidApp or @AppLoginRNAndroidApp", //or @DownloadMobileKey or @OpenKeyDoorLockReactNativeApp ",
+        tags = "@AppLaunchRNAndroidApp or @AppLoginRNAndroidApp or @DownloadMobileKey or @OpenKeyDoorLockReactNativeApp",
         features = "src/main/com.openkey.resources/features",
         glue = "com.openkey.steps",
         publish = true

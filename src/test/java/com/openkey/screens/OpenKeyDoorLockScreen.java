@@ -10,9 +10,10 @@ import org.testng.Assert;
 import java.util.List;
 
 public class OpenKeyDoorLockScreen extends BaseScreen {
-    static int counter = 0;
-    static int lockOpenSuccessCount = 0;
-    static int lockOpenFailureCount = 0;
+    public static int counter = 0;
+   public static int lockOpenSuccessCount = 0;
+    public static int lockOpenFailureCount = 0;
+    public static int totalNumberOfLockOpeningAttempts=0;
 
     /**
      * Mobile Elements
@@ -73,7 +74,7 @@ public class OpenKeyDoorLockScreen extends BaseScreen {
     }
 
     public void myKeyClickMultipleTimes(int numberOfTimes) throws InterruptedException {
-        //totalNumberOfLockOpeningAttempts=numberOfTimes;
+        totalNumberOfLockOpeningAttempts=numberOfTimes;
         System.out.println("Clicking key multiple times");
         while (counter < numberOfTimes) {
             try {

@@ -16,12 +16,10 @@ public class OpenKeyDownloadMobileKeyScreen extends BaseScreen {
      * Actions
      */
     public void verifyKeyDownloadingScreen() {
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(animatedImage)).isDisplayed();
     }
 
     public void verifyActiveKeyScreen() {
-
     }
 
     public void verifyAccessToRoomNumber() {

@@ -23,8 +23,17 @@ public class YAMLGetterSetter {
     private String device;
     private String appPackage;
     private String appActivity;
-    private String orientation;
 
+    public int getDoor_lock_total_count() {
+        return door_lock_total_count;
+    }
+
+    public void setDoor_lock_total_count(int door_lock_total_count) {
+        this.door_lock_total_count = door_lock_total_count;
+    }
+
+    private String orientation;
+    private int door_lock_total_count;
 
     private List<YAMLGetterSetter> credentials;
     private String id;

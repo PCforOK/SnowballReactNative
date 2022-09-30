@@ -1,6 +1,7 @@
 package com.openkey.steps;
 
-import com.google.common.collect.ImmutableMap;
+import com.openkey.setups.CapabilitiesManager;
+import com.openkey.setups.YamlConfigReader;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ import java.io.IOException;
 //import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
 
 public class OpenKeyDoorLockOpenSteps extends BaseSteps {
+
 
     @Before
 
@@ -28,9 +30,7 @@ public class OpenKeyDoorLockOpenSteps extends BaseSteps {
 
     @When("^Guest clicks on Key Icon on My Key Screen$")
     public void guestClicksOnKeyIconOnMyKeyScreen() throws InterruptedException {
-        openDoorLockScreen.verifyRoomClick();
-        Thread.sleep(8000);
-        System.out.println("Lock opens successfully for first time");
+        openDoorLockScreen.clickMyKey();
     }
 
     @Then("Permissions should be allowed")
@@ -39,9 +39,9 @@ public class OpenKeyDoorLockOpenSteps extends BaseSteps {
     }
 
     @And("^Guest door lock should open$")
-    public void verifyDoorOpens() {
-        // openDoorLockScreen.verifyLockOpen();
-        // System.out.println("lock opens successfully!");
+    public void verifyDoorOpens() throws InterruptedException {
+        openDoorLockScreen.verifyDoorOpen();
+
     }
 
     @And("message this key unlocks your room should display")
@@ -49,15 +49,13 @@ public class OpenKeyDoorLockOpenSteps extends BaseSteps {
         String message = openDoorLockScreen.verifyMessage();
         Assert.assertEquals(message, "This key unlocks your room and common areas.");
     }
-
-    @When("I click the main key multiple times")
-    public void iClickTheMainKeyMultipleTimes() throws InterruptedException {
-        openDoorLockScreen.clickMyKeyMultipleTimes();
+    @When("I click the main key for given number of times")
+    public void iClickTheMainKeyForGivenNumberOfTimes() throws InterruptedException {
+        openDoorLockScreen.myKeyClickMultipleTimes(CapabilitiesManager.lockCounter);
     }
 
     @Then("it should open the lock successfully each time")
     public void itShouldOpenTheLockSuccessfullyEachTime() throws InterruptedException {
-        // openDoorLockScreen.clickMyKeyMultipleTimes();
 
     }
 }

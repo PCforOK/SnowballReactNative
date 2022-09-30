@@ -5,17 +5,9 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeTest;
-
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-
-
-
-
 public class CapabilitiesManager {
 
     /**
@@ -30,7 +22,8 @@ public class CapabilitiesManager {
     public static String deviceName;
     public static String appActivity;
     public static String orientation;
-
+    public  String [] desiredCapabilities;
+    public static int lockCounter=0;
 
     /*// BrowserStack CapabilitiesManager
     public static String userName = "monalirajgor_jbYTIH";
@@ -51,13 +44,14 @@ public class CapabilitiesManager {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         YamlConfigReader.inititializeyaml();
         // Reading capabilities from yaml file using getDesired_capabilities() method in YamlConfigReader class
-        String [] desiredCapabilities = YamlConfigReader.getDesired_capabilities();
+        desiredCapabilities = YamlConfigReader.getDesired_capabilities();
         platformName = desiredCapabilities[0];
         platformVersion = desiredCapabilities[1];
         deviceName = desiredCapabilities[2];
         appPackage = desiredCapabilities[3];
-        appActivity = desiredCapabilities[4];
-        orientation = desiredCapabilities[5];
+        String appActivity = desiredCapabilities[4];
+        String orientation = desiredCapabilities[5];
+        lockCounter = Integer.parseInt(desiredCapabilities[6]);
 
 
         String[] getCredentials = YamlConfigReader.getCredentials();
@@ -65,18 +59,19 @@ public class CapabilitiesManager {
         String userName = getCredentials[1];
         String password = getCredentials[2];
 
-        System.out.println("App Center credentials :");
-        System.out.println("Id : " + appId);
-        System.out.println("user : " + userName);
-        System.out.println("Password : " + password);
-
+     /*   System.out.println("App Center credentials :");
+        System.out.println("Id : " +appId);
+        System.out.println("user : " +userName);
+        System.out.println("Password : " +password);
+*/
         System.out.println("Desired CapabilitiesManager");
-        System.out.println("Device Name : " + deviceName);
-        System.out.println("deviceType : " + platformName);
-        System.out.println("platformVersion : " + platformVersion);
-        System.out.println("appPackage : " + appPackage);
-        System.out.println("appActivity : " + appActivity);
-        System.out.println("orientation : " + orientation);
+        System.out.println("Device Name : " +deviceName);
+        System.out.println("deviceType : " +platformName);
+        System.out.println("platformVersion : " +platformVersion);
+        System.out.println("appPackage : " +appPackage);
+        System.out.println("appActivity : " +appActivity);
+        System.out.println("orientation : " +orientation);
+        System.out.println("lock counter : " +lockCounter);
 
         // Read the DesiredCapabilities from ok-envds.yaml for OpenKey V5 Live-Debug App capabilities only for local attached device with system
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
@@ -84,6 +79,7 @@ public class CapabilitiesManager {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
         capabilities.setCapability("appPackage", appPackage);
         capabilities.setCapability("appActivity", appActivity);
+        capabilities.setCapability("noReset", true);
 
         /*// Set the DesiredCapabilities for OpenKey V5 Live-Debug App capabilities only for local attached device with system
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");

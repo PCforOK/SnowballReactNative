@@ -10,6 +10,5 @@ Feature: Open Door Lock using issued mobile key in OpenKey React Native App in A
 
 Scenario: open lock multiple times in a series
   As a guest I am opening the door multiple times at regular interval
-
-  When I click the main key multiple times
+  When I click the main key for given number of times
   Then it should open the lock successfully each time

@@ -1,20 +1,30 @@
 package com.openkey.steps;
 
+import com.google.common.collect.ImmutableMap;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
+import java.io.IOException;
+
+//import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
+
 public class OpenKeyDoorLockOpenSteps extends BaseSteps {
 
     @Before
 
-    public void setups() {
+    public void setups() throws IOException {
 
         setupScreens(driver);
 
     }
+
+
+
+
+
 
     @When("^Guest clicks on Key Icon on My Key Screen$")
     public void guestClicksOnKeyIconOnMyKeyScreen() throws InterruptedException {

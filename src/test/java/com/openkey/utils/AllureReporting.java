@@ -1,11 +1,7 @@
 package com.openkey.utils;
 
 import com.openkey.screens.OpenKeyDoorLockScreen;
-import com.openkey.screens.RN_OpenKeyMobileAndroidAppLoginScreen;
 import com.openkey.setups.CapabilitiesManager;
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -13,23 +9,29 @@ import java.util.Properties;
 public class AllureReporting extends CapabilitiesManager {
 
     String path;
+    Properties pr;
 
     public void envFileWriter() throws IOException {
 
+       /* System.out.println("Hi in envFileWriter"+deviceName);
+        System.out.println("Hi in envFileWriter"+platformName);
+        System.out.println("Hi in envFileWriter"+platformVersion);
+        System.out.println("Hi in envFileWriter"+appPackage);
+        System.out.println("Hi in envFileWriter"+String.valueOf(OpenKeyDoorLockScreen.totalNumberOfLockOpeningAttempts));
+        System.out.println("Hi in envFileWriter"+String.valueOf(OpenKeyDoorLockScreen.lockOpenFailureCount));
+*/
+        path = "allure-results\\environment.properties";
+        System.out.println("Path :"+path);
+        FileOutputStream outputStream = new FileOutputStream(path, true);
+         pr = new Properties();
 
-        path = "allure-results/environment.properties";
-        FileOutputStream outputStream = new FileOutputStream(path);
-        Properties pr = new Properties();
-
-        //pr.setProperty("set OTP VALUE IS",RN_OpenKeyMobileAndroidAppLoginScreen.otpValue);
-        pr.setProperty("Device Name :", deviceName);
-        pr.setProperty("deviceType : ", platformName);
-        pr.setProperty("platformVersion : ", platformVersion);
-        pr.setProperty("appPackage : ", appPackage);
-        pr.setProperty("appActivity : ", appActivity);
-        pr.setProperty("orientation : ", orientation);
-        pr.setProperty("Lock Counter Value", String.valueOf(OpenKeyDoorLockScreen.lockCounter));
-        pr.store(new FileOutputStream(path),"test ankit reports");
+        pr.put("Total number of times the test executed", String.valueOf(OpenKeyDoorLockScreen.totalNumberOfLockOpeningAttempts));
+        pr.put("Number of times lock opens successfully : ", String.valueOf(OpenKeyDoorLockScreen.lockOpenSuccessCount));
+        pr.put("Number of times lock opening failed  : ",  String.valueOf(OpenKeyDoorLockScreen.lockOpenFailureCount));
+        pr.put("Device Name :", deviceName);
+        pr.put("deviceType : ", platformName);
+        pr.put("platformVersion : ", platformVersion);
+        pr.store(outputStream,"Allure Report Results");
 
 
 

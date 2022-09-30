@@ -50,7 +50,7 @@ public class RN_OpenKeyMobileAndroidAppLoginScreen extends BaseScreen {
     public void verifyRegistrdMobileNumSubmit() throws InterruptedException {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(txtFieldMobileNumber)).clear();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(txtFieldMobileNumber)).sendKeys("+91-9457221143");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(txtFieldMobileNumber)).sendKeys("+91-8826282580");
         wait.until(ExpectedConditions.visibilityOfElementLocated(btnSubmit)).click();
         System.out.println("SUBMIT button is clicked successfully");
         Thread.sleep(5000);
@@ -89,7 +89,7 @@ public class RN_OpenKeyMobileAndroidAppLoginScreen extends BaseScreen {
             otpEditTextArray.get(i).sendKeys(String.valueOf(otpValue.charAt(i)));
         }
 
-        Thread.sleep(25000);
+        Thread.sleep(2000);
 
 
     }

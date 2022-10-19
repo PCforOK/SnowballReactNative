@@ -1,11 +1,13 @@
 package com.openkey.screens;
 
+import com.openkey.utils.AllureReporting;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.io.IOException;
 import java.util.List;
 
 public class RN_OpenKeyMobileAndroidAppLoginScreen extends BaseScreen {
@@ -23,9 +25,11 @@ public class RN_OpenKeyMobileAndroidAppLoginScreen extends BaseScreen {
 
     String otpValue;
 
-    public RN_OpenKeyMobileAndroidAppLoginScreen(AndroidDriver driver) {
+    public RN_OpenKeyMobileAndroidAppLoginScreen(AndroidDriver driver) throws IOException {
         super(driver);
     }
+
+
 
     public void verifyPushNotificationScreen() {
 
@@ -47,15 +51,21 @@ public class RN_OpenKeyMobileAndroidAppLoginScreen extends BaseScreen {
         System.out.println("FIND MY RESERVATION screen is displayed successfully");
     }
 
-    public void verifyRegistrdMobileNumSubmit() throws InterruptedException {
+    public void verifyRegistrdMobileNumEnter() throws InterruptedException, IOException {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(txtFieldMobileNumber)).clear();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(txtFieldMobileNumber)).sendKeys("+91-8826282580");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(txtFieldMobileNumber)).sendKeys("+91-9557221143");
+
+    }
+
+    public void verifyRegistrdMobileNumSubmit() throws InterruptedException, IOException {
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(btnSubmit)).click();
         System.out.println("SUBMIT button is clicked successfully");
         Thread.sleep(5000);
 
     }
+
 
 
     public void verifyVerificationScreen() {
@@ -81,7 +91,7 @@ public class RN_OpenKeyMobileAndroidAppLoginScreen extends BaseScreen {
         driver.navigate().back();
     }
 
-    public void verifyEnterVerificationCodeAction() throws InterruptedException {
+    public void verifyEnterVerificationCodeAction() throws InterruptedException, IOException {
 
         List<WebElement> otpEditTextArray = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(editBoxOtpInput));
 
@@ -89,7 +99,8 @@ public class RN_OpenKeyMobileAndroidAppLoginScreen extends BaseScreen {
             otpEditTextArray.get(i).sendKeys(String.valueOf(otpValue.charAt(i)));
         }
 
-        Thread.sleep(2000);
+
+        //Thread.sleep(2000);
 
 
     }

@@ -1,10 +1,12 @@
 package com.openkey.setups;
 
-import com.google.common.collect.ImmutableMap;
+import com.openkey.utils.HooksManager;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.SessionId;
 import org.testng.annotations.BeforeTest;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -25,6 +27,10 @@ public class CapabilitiesManager {
     public  String [] desiredCapabilities;
     public static int lockCounter=0;
 
+    public static HooksManager hooksManager;
+
+    public static SessionId sessionId;
+
     /*// BrowserStack CapabilitiesManager
     public static String userName = "monalirajgor_jbYTIH";
     public static String accessKey = "dHT1pQpC7gmB3xnEdAuh";*/
@@ -38,6 +44,8 @@ public class CapabilitiesManager {
      */
     @BeforeTest
     public void preparation() throws IOException {
+
+        hooksManager = new HooksManager();
 
         // Use empty DesiredCapabilities object
 
@@ -79,7 +87,7 @@ public class CapabilitiesManager {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
         capabilities.setCapability("appPackage", appPackage);
         capabilities.setCapability("appActivity", appActivity);
-        capabilities.setCapability("noReset", true);
+        capabilities.setCapability("noReset", false);
 
         /*// Set the DesiredCapabilities for OpenKey V5 Live-Debug App capabilities only for local attached device with system
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
@@ -107,22 +115,7 @@ public class CapabilitiesManager {
         // Use a higher value if your mobile elements take time to show up
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-
-
-
-
-
-       // pr.setProperty("Device Name :", deviceName);
-        //pr.setProperty("deviceType : ", platformName);
-        //pr.setProperty("platformVersion : ", platformVersion);
-        //pr.setProperty("appPackage : ", appPackage);
-       // pr.setProperty("appActivity : ", appActivity);
-       // pr.setProperty("orientation : ", orientation);
-       // pr.setProperty("Set lock counter value : ","15");
-
-        // pr.store(new FileOutputStream(path),"test ankit reports");
-
-
+        sessionId=driver.getSessionId();
 
 
 

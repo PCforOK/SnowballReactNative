@@ -5,11 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.io.IOException;
+
 public class RN_OpenKeyMobileAndroidAppLaunchScreen extends BaseScreen {
 
     By splashLocator = By.xpath("//android.widget.TextView[@content-desc=\"OpenKey\"]");
 
-    public RN_OpenKeyMobileAndroidAppLaunchScreen(AndroidDriver driver) {
+    public RN_OpenKeyMobileAndroidAppLaunchScreen(AndroidDriver driver) throws IOException {
         super(driver);
     }
 

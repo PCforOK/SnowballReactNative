@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.io.IOException;
 import java.util.List;
 
 public class OpenKeyDoorLockScreen extends BaseScreen {
@@ -33,7 +34,7 @@ public class OpenKeyDoorLockScreen extends BaseScreen {
     String msg;
     Boolean flag;
 
-    public OpenKeyDoorLockScreen(AndroidDriver driver) {
+    public OpenKeyDoorLockScreen(AndroidDriver driver) throws IOException {
         super(driver);
     }
 

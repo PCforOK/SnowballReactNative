@@ -17,7 +17,6 @@ import org.testng.annotations.Test;
     glue = "com.openkey.steps",
     publish = true
 )
-
 public class TestRunner extends CapabilitiesManager {
 
     private TestNGCucumberRunner testNGCucumberRunner;

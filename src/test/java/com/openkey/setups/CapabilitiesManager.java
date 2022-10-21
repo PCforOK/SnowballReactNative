@@ -4,6 +4,9 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -29,15 +32,28 @@ public class CapabilitiesManager {
      * This method runs before any other method,
      * We are setting up our appium client in order to connect ios and android devices to appium server
      */
-    @BeforeTest
-    public void preparation() throws IOException {
 
+    //Enables Tests to be run through webpage or intellij
+    @Parameters({"rail", "device", "os", "os_version", "appPack", "appAct"})
+    @BeforeTest
+    public void preparation(@Optional String rail, @Optional String device, @Optional String os,
+                            @Optional String os_version, @Optional String appPack, @Optional String appAct) throws IOException {
         // Use empty DesiredCapabilities object
         DesiredCapabilities capabilities = new DesiredCapabilities();
         YamlConfigReader.inititializeyaml();
 
         // Reading capabilities from yaml file using getDesired_capabilities() method in YamlConfigReader class
         String [] desiredCapabilities= YamlConfigReader.getDesired_capabilities();
+
+        //Comment Out if not using Webpage
+        if(rail != null) {
+            desiredCapabilities[0] = os;
+            desiredCapabilities[1] = os_version;
+            desiredCapabilities[2] = device;
+            desiredCapabilities[3] = appPack;
+            desiredCapabilities[4] = appAct;
+        }
+
         String platformName = desiredCapabilities[0];
         String platformVersion = desiredCapabilities[1];
         String deviceName = desiredCapabilities[2];

@@ -1,10 +1,11 @@
 package com.openkey.utils;
 
+import com.google.gson.JsonObject;
 import com.openkey.screens.OpenKeyDoorLockScreen;
 import com.openkey.setups.CapabilitiesManager;
 import io.qameta.allure.Allure;
-import net.masterthought.cucumber.json.Output;
 import org.apache.commons.io.FileUtils;
+import org.json.JSONObject;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -44,6 +45,20 @@ public class AllureReporting extends CapabilitiesManager {
         pr.put("deviceType : ", platformName);
         pr.put("platformVersion : ", platformVersion);
         pr.store(outputStream,"Allure Report Results");
+
+    }
+
+    public void executorFileWriter() throws IOException {
+
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("name",System.getenv("USERNAME"));
+        jsonObject.put("buildName",appPackage);
+        jsonObject.put("type","LocalRun");
+
+        FileWriter fr = new FileWriter("allure-results\\executor.json");
+        fr.write(jsonObject.toString());
+        fr.flush();
 
     }
 

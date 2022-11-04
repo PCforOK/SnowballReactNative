@@ -15,7 +15,7 @@ import java.sql.SQLException;
 @CucumberOptions(
         plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","com.openkey.utils.HooksManager"},
         monochrome = true,
-        tags = "@AppLaunchRNAndroidApp or @AppLoginRNAndroidApp", //or @DownloadMobileKey or @OpenKeyDoorLockReactNativeApp"
+        tags = "@AppLaunchRNAndroidApp or @AppLoginRNAndroidApp",// or @OpenKeyDoorLockReactNativeApp", //or @DownloadMobileKey or ,
         features = "src/main/com.openkey.resources/features",
         glue = {"com.openkey.steps","com/openkey/utils"},
         publish = true,
@@ -68,6 +68,7 @@ static DataBaseHandler dataBaseHandler;
 public void createpropFile() throws IOException, SQLException, ClassNotFoundException {
 
         allureReporting.envFileWriter();
+    allureReporting.executorFileWriter();
     dataBaseHandler.setupConnection();
 
     }

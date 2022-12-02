@@ -1,18 +1,26 @@
 package com.openkey.screens;
 
+import com.openkey.utils.LogsHandler;
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import com.openkey.utils.LogsHandler;
 
 import java.io.IOException;
 
 public class RN_OpenKeyMobileAndroidAppLaunchScreen extends BaseScreen {
 
+
+
     By splashLocator = By.xpath("//android.widget.TextView[@content-desc=\"OpenKey\"]");
 
     public RN_OpenKeyMobileAndroidAppLaunchScreen(AndroidDriver driver) throws IOException {
         super(driver);
+
+
     }
 
     public void verifyIfAppInstalled() {
@@ -34,6 +42,10 @@ public class RN_OpenKeyMobileAndroidAppLaunchScreen extends BaseScreen {
         if (driver.currentActivity().equalsIgnoreCase("com.openkey.MainActivity")) ;
 
         System.out.println("Splash screen is displayed successfully");
+
+        LogsHandler.infoLogs("Inside Launch Screen class, Splash is displayed");
+
+
     }
 
 

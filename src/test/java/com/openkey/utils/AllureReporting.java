@@ -10,31 +10,61 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.Properties;
 
 public class AllureReporting extends CapabilitiesManager {
 
-    String path;
+    String propPath;
+    String allureDirectPath = "allure-results";
     Properties pr;
 
     File screenshotFile;
 
+    File fl = new File(allureDirectPath);
+
     /*Checking if allure-results is not empty and clean it*/
+
+    public void createAllureDirectory () {
+
+        if (fl.mkdir()==true) {
+
+    System.out.println("'allure-results' directory is now created");
+
+     }
+
+    else {
+
+    System.out.println("Unable to create Directory");
+
+    }
+
+
+    }
 
     public void cleanUpAllureDirectory() throws IOException {
 
-        if (new File("allure-results").list().length>0) {
+        if (fl.exists() && fl.isDirectory()) {
 
-            FileUtils.cleanDirectory(new File("allure-results"));
+            if (new File("allure-results").list().length > 0) {
+
+                FileUtils.cleanDirectory(new File(allureDirectPath));
+            }
         }
+        else {
+
+            createAllureDirectory();
+
+        }
+
     }
 
     /* Writing Data into the Environment variable */
     public void envFileWriter() throws IOException {
 
-        path = "allure-results\\environment.properties";
+        propPath = "allure-results\\environment.properties";
 
-        FileOutputStream outputStream = new FileOutputStream(path, true);
+        FileOutputStream outputStream = new FileOutputStream(propPath, true);
 
         pr = new Properties();
 
@@ -72,11 +102,7 @@ public class AllureReporting extends CapabilitiesManager {
 
     }
 
-public void addScreenshot(String name) throws FileNotFoundException {
 
-        Allure.addAttachment(name, new FileInputStream(screenshotFile));
-
-    }
 
 
 

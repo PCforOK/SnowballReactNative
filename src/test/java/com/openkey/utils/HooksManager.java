@@ -64,7 +64,7 @@ public class HooksManager implements ConcurrentEventListener {
     private void handleTestStepFinished( TestStepFinished event1) {
         if (event1.getTestStep() instanceof PickleStepTestStep) {
             PickleStepTestStep testStep = (PickleStepTestStep)event1.getTestStep();
-            //step1Name = testStep.getStep().getText();
+           // step1Name = testStep.getStep().
 
         }
 

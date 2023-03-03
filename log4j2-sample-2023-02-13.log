@@ -1,0 +1,34 @@
+[INFO ] 2023-02-13 17:46:14.520 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 17:46:52.059 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 17:46:54.205 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 17:48:25.860 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 17:49:03.527 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 17:49:05.535 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 18:20:41.839 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 18:21:21.280 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 18:21:23.104 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 19:14:50.299 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 19:15:28.745 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 19:15:30.800 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 22:08:05.752 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:08:46.584 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 22:08:48.354 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 22:12:00.605 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:12:40.164 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 22:12:43.138 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 22:14:04.068 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:14:42.444 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 22:14:44.399 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 22:19:40.116 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:20:20.965 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 22:20:22.831 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 22:46:09.155 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:48:02.807 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:48:46.694 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 22:48:48.613 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 22:55:16.846 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:55:54.765 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 22:55:56.683 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2023-02-13 22:58:18.095 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2023-02-13 22:58:55.872 [main] LogsHandler - OTP message is received
+[INFO ] 2023-02-13 22:58:57.900 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated

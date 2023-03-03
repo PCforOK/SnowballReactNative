@@ -1,0 +1,5 @@
+[INFO ] 2022-11-23 23:50:07.689 [main] LogsHandler - TestRun is being setup, Capabilities Manager invoked
+[INFO ] 2022-11-23 23:50:08.492 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[INFO ] 2022-11-23 23:50:30.921 [main] LogsHandler - OTP message is received
+[INFO ] 2022-11-23 23:50:38.718 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2022-11-23 23:51:38.852 [main] LogsHandler - Driver session is ended now, TestRun execution is completed

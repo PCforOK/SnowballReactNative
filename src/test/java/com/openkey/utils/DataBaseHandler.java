@@ -39,11 +39,7 @@ public class DataBaseHandler extends CapabilitiesManager {
 
     pstmt.executeUpdate();
 
-
-
-
-
-}
+    }
 
 
 

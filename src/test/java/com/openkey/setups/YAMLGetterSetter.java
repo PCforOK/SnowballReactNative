@@ -15,7 +15,6 @@ public class YAMLGetterSetter {
 
         this.environment = environment;
     }
-
     private String environment;
 
     private List<YAMLGetterSetter> desired_capabilities;
@@ -24,17 +23,8 @@ public class YAMLGetterSetter {
     private String device;
     private String appPackage;
     private String appActivity;
-
-    public int getDoor_lock_total_count() {
-        return door_lock_total_count;
-    }
-
-    public void setDoor_lock_total_count(int door_lock_total_count) {
-        this.door_lock_total_count = door_lock_total_count;
-    }
-
     private String orientation;
-    private int door_lock_total_count;
+    private int doorLockTotalCount;
 
     private List<YAMLGetterSetter> credentials;
     private String id;
@@ -125,7 +115,7 @@ public class YAMLGetterSetter {
     @Override
     public String toString() {
 
-        return "\nname : " + name + "\ntype: " + type + "\nos_version: " + os_version + "device: " + device + "\ndesired_capabilities: " + desired_capabilities + "\n";
+        return "\nname : " +name + "\ntype: " + type + "\nos_version: " + os_version + "device: " + device + "\ndesired_capabilities: " + desired_capabilities + "\n";
     }
 
     // Credentials Node in yaml
@@ -167,6 +157,14 @@ public class YAMLGetterSetter {
     public void setPassword(String password) {
 
         this.password = password;
+    }
+
+    public int getDoorLockTotalCount() {
+        return doorLockTotalCount;
+    }
+
+    public void setDoorLockTotalCount(int doorLockTotalCount) {
+        this.doorLockTotalCount = doorLockTotalCount;
     }
 
 }

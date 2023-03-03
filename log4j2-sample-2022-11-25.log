@@ -1,0 +1,14 @@
+[INFO ] 2022-11-25 15:45:38.553 [main] LogsHandler - TestRun is being setup, Capabilities Manager invoked
+[INFO ] 2022-11-25 15:45:40.433 [main] LogsHandler - Driver session is ended now, TestRun execution is completed
+[INFO ] 2022-11-25 15:46:18.774 [main] LogsHandler - TestRun is being setup, Capabilities Manager invoked
+[INFO ] 2022-11-25 15:46:19.254 [main] LogsHandler - Inside Launch Screen class, Splash is displayed
+[FATAL] 2022-11-25 15:46:40.110 [main] LogsHandler - This is fatal one
+[INFO ] 2022-11-25 15:46:42.967 [main] LogsHandler - OTP message is received
+[INFO ] 2022-11-25 15:46:50.952 [main] LogsHandler - Inside Login screen class,OTP value is entered and getting validated
+[INFO ] 2022-11-25 15:48:38.464 [main] LogsHandler - Driver session is ended now, TestRun execution is completed
+[FATAL] 2022-11-25 15:51:31.952 [main] LogsHandler - This is fatal one
+[FATAL] 2022-11-25 21:31:09.711 [main] LogsHandler - This is fatal one
+[ERROR] 2022-11-25 21:32:12.281 [main] LogsHandler - This is error log
+[FATAL] 2022-11-25 23:30:49.847 [main] LogsHandler - This is fatal one
+[FATAL] 2022-11-25 23:35:41.759 [main] LogsHandler - This is fatal one
+[ERROR] 2022-11-25 23:41:52.053 [main] LogsHandler - Sending OTP is failed

@@ -25,7 +25,7 @@ public class RN_OpenKeyMobileAndroidAppLaunchScreen extends BaseScreen {
 
     public void verifyIfAppInstalled() {
 
-        if (driver.isAppInstalled("com.openkey")) {
+        if (driver.isAppInstalled("co.openkey.guest.dev")) {
 
             System.out.println("App is already installed in the device");
         } else {
@@ -39,7 +39,7 @@ public class RN_OpenKeyMobileAndroidAppLaunchScreen extends BaseScreen {
 
     public void verifySplashScreen() {
 
-        if (driver.currentActivity().equalsIgnoreCase("com.openkey.MainActivity")) ;
+        if (driver.currentActivity().equalsIgnoreCase("co.openkey.guest.MainActivity")) ;
 
         System.out.println("Splash screen is displayed successfully");
 

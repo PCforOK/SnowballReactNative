@@ -3,6 +3,7 @@ package com.openkey.steps;
 import com.google.common.collect.ImmutableMap;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -21,10 +22,23 @@ public class OpenKeyDownloadMobileKeySteps extends BaseSteps {
     @Before
     public void setups() throws IOException {
 
-        setupScreens(driver);
+       setupScreens(driver);
 
     }
 
+    @Given("^Guest is on My STAYS screen$")
+    public void guest_Is_On_MySTAYS_Screen() {
+
+        openKeyDownloadMobileKeyScreen.verifyMyStays();
+
+
+    }
+
+    @When("^Guest clicks GET MY KEY screen$")
+    public void guest_Clicks_GET_MYKEY_Screen() {
+
+        openKeyDownloadMobileKeyScreen.verifyGetMyKeyActions();
+    }
 
     @When("^Guest is downloading key$")
     public void guest_is_downloading_key() {
@@ -61,5 +75,6 @@ public class OpenKeyDownloadMobileKeySteps extends BaseSteps {
         openKeyDownloadMobileKeyScreen.verifyContentOnActiveKeyScreen();
 
     }
+
 
 }

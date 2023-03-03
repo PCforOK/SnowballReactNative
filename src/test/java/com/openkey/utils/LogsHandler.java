@@ -11,9 +11,9 @@ import java.io.IOException;
 
 public class LogsHandler implements Plugin {
 
-  private static Logger logger =LogManager.getLogger(LogsHandler.class);
+  private static Logger logger =LogManager.getLogger();
 
-  public static void infoLogs (String msg)
+    public static void infoLogs (String msg)
   {
       logger.info(msg);
 

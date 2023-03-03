@@ -19,7 +19,7 @@ public class OpenKeyDoorLockOpenSteps extends BaseSteps {
 
     public void setups() throws IOException {
 
-        setupScreens(driver);
+       setupScreens(driver);
 
     }
 
@@ -46,6 +46,7 @@ public class OpenKeyDoorLockOpenSteps extends BaseSteps {
 
     @And("message this key unlocks your room should display")
     public void messageThisKeyUnlocksYourRoomShouldDisplay() {
+
         String message = openDoorLockScreen.verifyMessage();
         Assert.assertEquals(message, "This key unlocks your room and common areas.");
     }

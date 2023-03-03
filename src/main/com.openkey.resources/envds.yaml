@@ -1,20 +1,19 @@
 name: OpenKeyMobileApp
 environment: dev
 desired_capabilities:
-  -   device: RZ8N603SCCB
-      os_version: 12
-      appPackage: com.openkey
-      appActivity: com.openkey.MainActivity
+  -   device: 710KPLC0247240
+      os_version: 11.0
+      appPackage: co.openkey.guest.dev
+      appActivity: co.openkey.guest.MainActivity
       orientation: PORTRAIT
-      door_lock_total_count: 15
       type: Android
+      doorLockTotalCount: 30
   -   device: iPhone 11
-      type: iOS
       os_version: 15.5
       appPackage: com.openkey.guest
       appActivity: com.openkey.guest.ui.activities.LauncherActivity
       orientation: PORTRAIT
-      door_lock_total_count: 15
+      type: iOS
 credentials:
   - id: appcenter
     username: mrajgor-openkey

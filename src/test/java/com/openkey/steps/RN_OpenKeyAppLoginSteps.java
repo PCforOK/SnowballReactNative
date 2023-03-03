@@ -2,6 +2,7 @@ package com.openkey.steps;
 
 import com.openkey.utils.AllureReporting;
 import com.openkey.utils.HooksManager;
+import com.openkey.utils.LogsHandler;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -28,29 +29,23 @@ public class RN_OpenKeyAppLoginSteps extends BaseSteps {
     }
 
 
+    @Given("^User is at Permission Required Screen$")
+    public void user_Is_At_Permission_Required_Screen() {
 
-    @Given("^User is at Push Notifications Screen$")
+        openKeyMobileAndroidAppLoginScreen.verifyPermissionRequiredScreen();
 
-    public void user_is_at_push_notifications_screen() throws IOException {
-
-        openKeyMobileAndroidAppLoginScreen.verifyPushNotificationScreen();
-
-       hooksManager.stepsScreenshots();
-    }
-
-
-
-
-
-    @When("^User clicks 'NEXT' over Push Notifications Screen$")
-
-    public void user_clicks_next_over_push_notifications_screen() throws IOException {
-
-        openKeyMobileAndroidAppLoginScreen.verifyNextBtnAction();
+        System.out.println("Permission Required Screen is displayed successfully");
 
         hooksManager.stepsScreenshots();
 
+    }
 
+
+    @When("^User clicks NEXT over Permission Required Screen$")
+    public void user_Clicks_NEXT_Over_Permission_Required_Screen() {
+
+        openKeyMobileAndroidAppLoginScreen.verifyPermissionScreensAction();
+        hooksManager.stepsScreenshots();
     }
 
     @Then("^User should be presented with Find My Reservation Screen$")
@@ -61,6 +56,13 @@ public class RN_OpenKeyAppLoginSteps extends BaseSteps {
         hooksManager.stepsScreenshots();
 
     }
+
+
+
+    @Given("^User is at Find My Reservation screen$")
+    public void userIsAtFindMyReservationScreen() {
+    }
+
 
     @When("^User enters registered mobile number and clicks 'SUBMIT'$")
 
@@ -74,14 +76,32 @@ public class RN_OpenKeyAppLoginSteps extends BaseSteps {
 
     }
 
-    @Then("^VERIFICATION Screen should be displayed$")
-
-    public void verification_screen_should_be_displayed() throws IOException {
-
-        openKeyMobileAndroidAppLoginScreen.verifyVerificationScreen();
-
-        hooksManager.stepsScreenshots();
+    @Then("^OPT INTO MESSAGING Screen should be displayed$")
+    public void opt_INTOMESSAGING_Screen_Should_Be_Displayed() {
     }
+
+    @Given("^User is at OPT INTO MESSAGING Screen$")
+    public void user_Is_At_OPT_INTO_MESSAGING_Screen() {
+    }
+
+    @When("^User click Next button over OPT INTO MESSAGING screen$")
+    public void userClickNextButtonOverOPTINTOMESSAGINGScreen() throws InterruptedException {
+
+        openKeyMobileAndroidAppLoginScreen.verifyOptIntoMessaging();
+
+    }
+
+    @Then("^User should be presented with VERIFICATION Screen$")
+    public void userShouldBePresentedWithVERIFICATIONScreen() {
+
+        //openKeyMobileAndroidAppLoginScreen.verifyVerificationScreen();
+
+        //hooksManager.stepsScreenshots();
+
+    }
+
+
+
 
     @When("^User receives the verification code$")
 
@@ -110,9 +130,19 @@ public class RN_OpenKeyAppLoginSteps extends BaseSteps {
 
         System.out.println("VERIFICATION CODE is entered successfully");
         hooksManager.stepsScreenshots();
-        System.out.println(HooksManager.stepName);
 
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -19,8 +19,8 @@ public class OpenKeyDoorLockScreen extends BaseScreen {
     /**
      * Mobile Elements
      */
-    By btnRoomLock = By.xpath("//android.widget.ImageView[@index='0']");
-    By allowAccess = By.id("com.android.permissioncontroller:id/permission_allow_button");
+    By btnRoomLock = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView");
+    By allowAccess = By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
     By allowLocation = By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
     By txtElementOnMyKey = By.xpath("//android.widget.TextView[contains(@text,'This key unlocks your room and common areas')]");
     By doorOpenTxtMessage = By.xpath("//android.widget.TextView[contains(@text,'Your door is now unlocked.')]");
@@ -42,9 +42,13 @@ public class OpenKeyDoorLockScreen extends BaseScreen {
      * Actions
      */
     public void clickMyKey() throws InterruptedException {
-        Thread.sleep(5000);
-        List<WebElement> lockUIElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(btnRoomLock));
-        lockUIElements.get(2).click();
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(btnRoomLock)).click();
+
+        //List<WebElement> lockUIElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(btnRoomLock));
+
+       //System.out.println(lockUIElements.size());
+       // lockUIElements.get(2).click();
     }
 
     public void verifyDoorOpen() throws InterruptedException {
@@ -96,8 +100,8 @@ public class OpenKeyDoorLockScreen extends BaseScreen {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(allowAccess)).isDisplayed();
         wait.until(ExpectedConditions.visibilityOfElementLocated(allowAccess)).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(allowLocation)).isDisplayed();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(allowLocation)).click();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(allowLocation)).isDisplayed();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(allowLocation)).click();
     }
 
 

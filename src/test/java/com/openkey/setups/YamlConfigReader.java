@@ -39,7 +39,7 @@ public class YamlConfigReader {
         desiredCapabilities[3] = yamlGetterSetter.getDesired_capabilities().get(0).getAppPackage();
         desiredCapabilities[4] = yamlGetterSetter.getDesired_capabilities().get(0).getAppActivity();
         desiredCapabilities[5] = yamlGetterSetter.getDesired_capabilities().get(0).getOrientation();
-        desiredCapabilities[6] = String.valueOf(yamlGetterSetter.getDesired_capabilities().get(0).getDoor_lock_total_count());
+        desiredCapabilities[6] = String.valueOf(yamlGetterSetter.getDesired_capabilities().get(0).getDoorLockTotalCount());
         credentials[0] = yamlGetterSetter.getCredentials().get(0).getId();
         credentials[1] = yamlGetterSetter.getCredentials().get(0).getUsername();
         credentials[2] = yamlGetterSetter.getCredentials().get(0).getPassword();

@@ -21,7 +21,7 @@ import java.sql.SQLException;
     @CucumberOptions(
             plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","com.openkey.utils.HooksManager"},
             monochrome = true,
-            tags = "@AppLaunchRNAndroidApp or @AppLoginRNAndroidApp or @OpenKeyDoorLockReactNativeApp",
+            //tags = {"~@LoginToHostPortalInAndroidMobileDevice", "~@Tag2"},//"not @LoginToHostPortalInAndroidMobileDevice",// and not @CreateGuestSessionInHostPortalInAndroidMobileDevice and not @WelcomeMessageReactNativeAndroidApp",
             features = "src/main/com.openkey.resources/features",
             glue = {"com.openkey.steps","com/openkey/utils"},
             publish = true,
@@ -30,7 +30,7 @@ import java.sql.SQLException;
 
     public class TestRunner extends CapabilitiesManager{
 
-        public Scenario scening;
+
         ITestResult result;
 
         private TestNGCucumberRunner testNGCucumberRunner;
@@ -56,6 +56,7 @@ import java.sql.SQLException;
         public void cleanOldReportsData() throws IOException {
 
           allureReporting.cleanUpAllureDirectory();
+
 
         }
 

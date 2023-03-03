@@ -15,7 +15,7 @@ import java.lang.annotation.Annotation;
 public class RN_OpenKeyAppLaunchSteps extends BaseSteps {
 
 
-    Annotation anno = RN_OpenKeyAppLaunchSteps.class.getAnnotation(Given.class);
+
 
 
 
@@ -34,11 +34,11 @@ public class RN_OpenKeyAppLaunchSteps extends BaseSteps {
 
     public void RN_snowball_app_is_installed_in_the_device() {
 
+            openKeyMobileAndroidAppLaunchScreen.verifyIfAppInstalled();
 
-        openKeyMobileAndroidAppLaunchScreen.verifyIfAppInstalled();
+}
 
 
-    }
 
 
     @When("^App is launched$")

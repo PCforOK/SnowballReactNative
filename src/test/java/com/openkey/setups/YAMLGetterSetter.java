@@ -24,7 +24,7 @@ public class YAMLGetterSetter {
     private String appPackage;
     private String appActivity;
     private String orientation;
-
+    private int doorLockTotalCount;
 
     private List<YAMLGetterSetter> credentials;
     private String id;
@@ -157,6 +157,14 @@ public class YAMLGetterSetter {
     public void setPassword(String password) {
 
         this.password = password;
+    }
+
+    public int getDoorLockTotalCount() {
+        return doorLockTotalCount;
+    }
+
+    public void setDoorLockTotalCount(int doorLockTotalCount) {
+        this.doorLockTotalCount = doorLockTotalCount;
     }
 
 }
